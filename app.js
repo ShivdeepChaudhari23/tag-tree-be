@@ -19,6 +19,7 @@ app.get('/tree', getTree);
 
 app.post('/tree', postTree);
 
+app.get('/test', (req, res) => res.status(200).json({ greetings: `Hello ${req.query.name}` }));
 const server = app.listen(process.env.PORT, () => console.log('Listening Requests on : %o', process.env.PORT));
 
 function closeServer() {
